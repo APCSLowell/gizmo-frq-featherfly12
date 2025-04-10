@@ -44,8 +44,15 @@ public class OnlinePurchaseManager {
         return false;
     }
 
-    // Additional methods to add Gizmos to the purchases list, etc.
+    // Additional method to add Gizmos to the purchases list
     public void addPurchase(Gizmo g) {
         purchases.add(g);
+    }
+
+    // Optional: A method to print purchases (for debugging purposes)
+    public void printPurchases() {
+        for (Gizmo g : purchases) {
+            System.out.println("Gizmo - Maker: " + g.getMaker() + ", Electronic: " + g.isElectronic());
+        }
     }
 }
