@@ -19,12 +19,15 @@ public class Gizmo
    * object represented by the
    * parameter, and false otherwise.
    */
-   public boolean equals(Object other)
-   {
-     boolean sameMaker = maker.equals(((Gizmo)other).getMaker());
-     boolean bothElec = isElec == ((Gizmo)other).isElectronic();
-     return sameMaker && bothElec;
-   }
+   public boolean equals(Object other) {
+    if (this == other) return true; // Check if both are the same object
+    if (other == null || getClass() != other.getClass()) return false; // Check for null and same class
+    Gizmo gizmo = (Gizmo) other; // Cast to Gizmo
+    boolean sameMaker = maker.equals(gizmo.getMaker());
+    boolean bothElec = isElec == gizmo.isElectronic();
+    return sameMaker && bothElec;
+}
+
    public Gizmo(String s, boolean e)
    {
      maker = s;
